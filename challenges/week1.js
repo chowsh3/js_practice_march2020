@@ -71,9 +71,9 @@ function getMeanScore(scores) {
   let n = 0;
   for (let i = 0; i < scores.length; i++) {
     n += scores[i];
-  };
+  }
   return Math.round((n / (scores.length)) * 100) / 100;
-};
+}
 
 function simpleFizzBuzz(n) {
   if (n === undefined) throw new Error("n is required");
