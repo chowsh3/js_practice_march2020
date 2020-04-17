@@ -26,7 +26,11 @@ function countSheep(arr) {
 
 function hasMPostCode(person) {
   if (person === undefined) throw new Error("person is required");
- 
+  let personValues = Object.values(person)
+  let arrayValues = Object.assign({},...personValues)
+  let newPost = (arrayValues.postCode);
+  return (arrayValues.city === "Manchester" && newPost.startsWith("M")) ? true
+  : false;
 }
 
 module.exports = {
