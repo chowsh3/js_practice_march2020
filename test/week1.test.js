@@ -21,12 +21,18 @@ describe("capitalize", () => {
   test("does nothing if the string is already capitalized", () => {
     expect(capitalize("Hello")).toBe("Hello");
   });
+
+  test("does nothing if the string is no containers", () => {
+    expect(capitalize("")).toBe("");
+  });
 });
 
 describe("generateInitials", () => {
   test("returns the initials of a firstname and surname", () => {
     expect(generateInitials("Frederic", "Bonneville")).toBe("F.B");
+    
   });
+ 
 });
 
 describe("addVAT", () => {
