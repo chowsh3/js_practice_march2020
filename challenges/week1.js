@@ -4,9 +4,15 @@ function capitalize(word) {
 }
 
 function generateInitials(firstName, lastName) {
-  if (firstName === undefined) throw new Error("firstName is required");
-  if (lastName === undefined) throw new Error("lastName is required");
-  return firstName.charAt(0).toUpperCase() + "." + lastName.charAt(0).toUpperCase();
+  // if (firstName === undefined) throw new Error("firstName is required");
+  // if (lastName === undefined) throw new Error("lastName is required");
+  
+  return (isNaN(firstName)|| isNaN(lastName)) ? (firstName.charAt(0).toUpperCase() + "." + lastName.charAt(0).toUpperCase())
+    : (firstName === undefined) ? ("firstName is required")
+      : (lastName === undefined) ? ("lastName is required")
+        : "Alphabetical characters only"
+
+
 }
 
 function addVAT(originalPrice, vatRate) {
@@ -87,11 +93,11 @@ function simpleFizzBuzz(n) {
     return n;
   }
 */
-  return (n % 3===0 && n % 5 ===0) ? "fizzbuzz"
-        : (n % 5 === 0) ? "buzz"
-        : (n % 3 === 0) ? "fizz"
+  return (n % 3 === 0 && n % 5 === 0) ? "fizzbuzz"
+    : (n % 5 === 0) ? "buzz"
+      : (n % 3 === 0) ? "fizz"
         : n;
-  
+
 }
 
 module.exports = {

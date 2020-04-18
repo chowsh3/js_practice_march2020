@@ -32,6 +32,11 @@ describe("generateInitials", () => {
     expect(generateInitials("Frederic", "Bonneville")).toBe("F.B");
     
   });
+
+  test("returns enter alphabetical characters only", () => {
+    expect(generateInitials(1,2)).toBe("Alphabetical characters only");
+    
+  });
  
 });
 
@@ -51,6 +56,10 @@ describe("addVAT", () => {
   test("adds a VAT of 0% to a price of 25", () => {
     expect(addVAT(25, 0)).toBe(25);
   });
+  test("adds a VAT of 10% to a price of -25", () => {
+    expect(addVAT(-25, 10)).toBe(-27.5);
+  });
+
 });
 
 describe("getSalePrice", () => {
@@ -69,6 +78,10 @@ describe("getSalePrice", () => {
   test("reduces a price of 50 by 0%", () => {
     expect(getSalePrice(50, 0)).toBe(50);
   });
+  test("reduces a price of 50 by 100%", () => {
+    expect(getSalePrice(50, 100)).toBe(0);
+  });
+
 });
 
 describe("getMiddleCharacter", () => {
@@ -138,6 +151,10 @@ describe("getMeanScore", () => {
 
   test("returns the mean to 2 decimal places", () => {
     expect(getMeanScore([24, 44, 56, 11, 12, 17, 34])).toBe(28.29);
+  });
+
+  test("returns the mean to 2 decimal places of decimal numbers", () => {
+    expect(getMeanScore([0.1,0.2,0.3])).toBe(0.20);
   });
 });
 

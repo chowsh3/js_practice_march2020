@@ -22,6 +22,14 @@ describe("getFillings", () => {
     };
     expect(getFillings(sandwich2)).toEqual(["smoked salmon", "dill"]);
   });
+
+  const sandwich3 = {
+    bread: "Rye",
+    fillings: 2,
+    accompaniment: "wedges"
+  };
+  expect(getFillings(sandwich3)).toEqual("filling should be a valid ingredient");
+  
 });
 
 describe("isFromManchester", () => {
@@ -41,6 +49,15 @@ describe("isFromManchester", () => {
       age: 39
     };
     expect(isFromManchester(person)).toBe(false);
+  });
+
+  test("returns false if the person is not Manchester", () => {
+    const person = {
+      name: "Will",
+      city: ["Leeds", "Manchester"],
+      age: 39
+    };
+    expect(isFromManchester(person)).toBe(true);
   });
 });
 
@@ -70,6 +87,14 @@ describe("getBusNumbers", () => {
 
   test("returns the correct number of buses for larger numbers of people", () => {
     expect(getBusNumbers(43728)).toBe(1094);
+  });
+  
+  test("returns the correct number of buses for 0 people", () => {
+    expect(getBusNumbers(0)).toBe("No buses are required");
+  });
+
+  test("returns the correct number of buses for 40 people including 1 pram (takes 2 spaces)", () => {
+    expect(getBusNumbers(38,1)).toBe(1);
   });
 });
 

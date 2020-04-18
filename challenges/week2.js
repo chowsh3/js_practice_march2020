@@ -1,17 +1,19 @@
 function getFillings(sandwich) {
   if (sandwich === undefined) throw new Error("ingredients is required");
-  return sandwich.fillings;
+  return (isNaN(sandwich.fillings)) ? sandwich.fillings
+      :"filling should be a valid ingredient"
 }
 
 function isFromManchester(person) {
   if (person === undefined) throw new Error("person is required");
-  return (person.city === "Manchester")? true : false ;
+  return (person.city.includes("Manchester")) ? true : false;
 }
 
-function getBusNumbers(people) {
+function getBusNumbers(people,pram) {
   if (people === undefined) throw new Error("people is required");
-  let dividePeoplebyMaxbus = people/40;
-  return Math.ceil(dividePeoplebyMaxbus);
+  return (people===0 && pram === undefined) ? "No buses are required"
+    :(pram ===undefined || pram === 0) ? Math.ceil((people + 0)/ 40)
+    :Math.ceil((people + (pram +1))/ 40)
 }
 
 function countSheep(arr) {
