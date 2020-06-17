@@ -48,7 +48,7 @@ function getIntegers(nums) {
 function getCities(users) {
   if (!users) throw new Error("users is required");
   let cityNames = [];
-for (let i=0; i<users.length; i++){
+  for (let i=0; i<users.length; i++){
   (cityNames.push(users[i].data.city.displayName))
   }
   return cityNames;
@@ -56,7 +56,11 @@ for (let i=0; i<users.length; i++){
 
 function getSquareRoots(nums) {
   if (!nums) throw new Error("nums is required");
-  // Your code here
+  let squareRootArray=[];
+  for (let i=0; i<nums.length; i++){
+    squareRootArray.push(Math.round(Math.sqrt(nums[i])*100)/100);
+  }
+  return (squareRootArray)
 }
 
 function findSentencesContaining(sentences, str) {
