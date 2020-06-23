@@ -31,7 +31,7 @@ function findNamesBeginningWith(names, char) {
 
   names.forEach(character => {
     if(character.startsWith(char)){
-      arrayNames.push(character)
+      arrayNames.push(character);
     }
   })
   return arrayNames
@@ -39,12 +39,20 @@ function findNamesBeginningWith(names, char) {
 
 function findVerbs(words) {
   if (!words) throw new Error("words is required");
+  // let arrayVerbs = [];
+  // for (let i = 0; i < words.length; i++) {
+  //   if (words[i].startsWith("to ")) {
+  //     arrayVerbs.push(words[i])
+  //   }
+  // }
+  // return arrayVerbs;
+
   let arrayVerbs = [];
-  for (let i = 0; i < words.length; i++) {
-    if (words[i].startsWith("to ")) {
-      arrayVerbs.push(words[i])
+  words.forEach(word => {
+    if(word.startsWith("to ")){
+      arrayVerbs.push(word);
     }
-  }
+  })
   return arrayVerbs;
 }
 
