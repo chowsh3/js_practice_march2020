@@ -58,15 +58,21 @@ function findVerbs(words) {
 
 function getIntegers(nums) {
   if (!nums) throw new Error("nums is required");
+  // let arrayIntegers = [];
+  // for (let i = 0; i < nums.length; i++) {
+  //   if (Number.isInteger(nums[i])) {
+  //     arrayIntegers.push(nums[i])
+  //   }
+  // }
+  // return arrayIntegers;
+
   let arrayIntegers = [];
-  for (let i = 0; i < nums.length; i++) {
-    if (Number.isInteger(nums[i])) {
-      arrayIntegers.push(nums[i])
+  nums.forEach(num => {
+    if(Number.isInteger(num)){
+      arrayIntegers.push(num);
     }
-  }
+  })
   return arrayIntegers;
-
-
 }
 
 function getCities(users) {
