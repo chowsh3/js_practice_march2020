@@ -106,13 +106,18 @@ function findSentencesContaining(sentences, str) {
   if (!sentences) throw new Error("sentences is required");
   if (!str) throw new Error("str is required");
   let newArray = [];
-  for (let i = 0; i < sentences.length; i++) {
-    if (sentences[i].toLowerCase().includes(str)) {
-      newArray.push(sentences[i])
+  // for (let i = 0; i < sentences.length; i++) {
+  //   if (sentences[i].toLowerCase().includes(str)) {
+  //     newArray.push(sentences[i])
+  //   }
+  // }
+  // return newArray
+  sentences.forEach(sentence => {
+    if(sentence.toLowerCase().includes(str)){
+      newArray.push(sentence)
     }
-  }
-  return newArray
-
+  })
+  return newArray;
 }
 
 function getLongestSides(triangles) {
