@@ -20,7 +20,7 @@ function findSmallNums(nums) {
     } else {
       return false;
     }
-  })
+  });
 
   return arrayOfLessthan1;
 }
@@ -28,7 +28,7 @@ function findSmallNums(nums) {
 function findNamesBeginningWith(names, char) {
   if (!names) throw new Error("names is required");
   if (!char) throw new Error("char is required");
-  let arrayNames = [];
+  // let arrayNames = [];
   // for (let i = 0; i < names.length; i++) {
   //   if (names[i].startsWith(char)) {
   //     arrayNames.push(names[i])
@@ -36,11 +36,19 @@ function findNamesBeginningWith(names, char) {
   // }
   // return arrayNames;
 
-  names.forEach(character => {
+  // names.forEach(character => {
+  //   if(character.startsWith(char)){
+  //     arrayNames.push(character);
+  //   }
+  // })
+
+  const arrayNames = names.filter(character=>{
     if(character.startsWith(char)){
-      arrayNames.push(character);
+      return true;
+    } else {
+      return false;
     }
-  })
+  });
   return arrayNames
 }
 
@@ -54,12 +62,21 @@ function findVerbs(words) {
   // }
   // return arrayVerbs;
 
-  let arrayVerbs = [];
-  words.forEach(word => {
+  // let arrayVerbs = [];
+  // words.forEach(word => {
+  //   if(word.startsWith("to ")){
+  //     arrayVerbs.push(word);
+  //   }
+  // });
+  // return arrayVerbs;
+
+  const arrayVerbs = words.filter(word => {
     if(word.startsWith("to ")){
-      arrayVerbs.push(word);
+      return true;
+    } else {
+      return false;
     }
-  })
+  });
   return arrayVerbs;
 }
 
