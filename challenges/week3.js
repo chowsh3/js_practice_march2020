@@ -30,7 +30,7 @@ function getTotalSubjects(people) {
   allLengths.forEach(totalNumbers);
   function totalNumbers(number) {
     n += number;
-  };
+  }
   return (n)
 }
 
