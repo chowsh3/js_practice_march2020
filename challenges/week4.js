@@ -92,10 +92,14 @@ function getCities(users) {
 function getSquareRoots(nums) {
   if (!nums) throw new Error("nums is required");
   let squareRootArray = [];
-  for (let i = 0; i < nums.length; i++) {
-    squareRootArray.push(Math.round(Math.sqrt(nums[i]) * 100) / 100);
-  }
-  return (squareRootArray)
+  // for (let i = 0; i < nums.length; i++) {
+  //   squareRootArray.push(Math.round(Math.sqrt(nums[i]) * 100) / 100);
+  // }
+  // return (squareRootArray)
+  nums.forEach(num=>{
+    squareRootArray.push(Math.round(Math.sqrt(num) * 100) / 100);
+  })
+  return squareRootArray;
 }
 
 function findSentencesContaining(sentences, str) {
