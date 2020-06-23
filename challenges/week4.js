@@ -77,10 +77,15 @@ function getIntegers(nums) {
 
 function getCities(users) {
   if (!users) throw new Error("users is required");
-  let cityNames = [];
-  for (let i = 0; i < users.length; i++) {
-    (cityNames.push(users[i].data.city.displayName))
-  }
+  // let cityNames = [];
+  // for (let i = 0; i < users.length; i++) {
+  //   (cityNames.push(users[i].data.city.displayName))
+  // }
+  // return cityNames;
+  let cityNames=[];
+  users.forEach(user => {
+    cityNames.push(user.data.city.displayName)
+  })
   return cityNames;
 }
 
