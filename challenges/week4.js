@@ -8,10 +8,17 @@ function findSmallNums(nums) {
   // }
   // return arrayOfLessthan1;
   
-  const arrayOfLessthan1 = [];
-  nums.forEach(item => {
+  // const arrayOfLessthan1 = [];
+  // nums.forEach(item => {
+  //   if(item<1){
+  //     arrayOfLessthan1.push(item);
+  //   }
+  // })
+  const arrayOfLessthan1 = nums.filter(item=>{
     if(item<1){
-      arrayOfLessthan1.push(item);
+      return true;
+    } else {
+      return false;
     }
   })
 
@@ -132,6 +139,8 @@ function getLongestSides(triangles) {
     }
   }
   return largestNumber;
+
+
 
 }
 
