@@ -178,15 +178,21 @@ function findSentencesContaining(sentences, str) {
 function getLongestSides(triangles) {
   if (!triangles) throw new Error("triangles is required");
 
-  var largestNumber = [0, 0, 0, 0, 0];
-  for (var arrayIndex = 0; arrayIndex < triangles.length; arrayIndex++) {
-    for (var subArrayIndex = 0; subArrayIndex < triangles[arrayIndex].length; subArrayIndex++) {
-      if (triangles[arrayIndex][subArrayIndex] > largestNumber[arrayIndex]) {
-        largestNumber[arrayIndex] = triangles[arrayIndex][subArrayIndex];
-      }
-    }
-  }
-  return largestNumber;
+  // var largestNumber = [0, 0, 0, 0, 0];
+  // for (var arrayIndex = 0; arrayIndex < triangles.length; arrayIndex++) {
+  //   for (var subArrayIndex = 0; subArrayIndex < triangles[arrayIndex].length; subArrayIndex++) {
+  //     if (triangles[arrayIndex][subArrayIndex] > largestNumber[arrayIndex]) {
+  //       largestNumber[arrayIndex] = triangles[arrayIndex][subArrayIndex];
+  //     }
+  //   }
+  // }
+  // return largestNumber;
+
+  const largestNumber = triangles.map ( sides => {
+    return Math.max.apply(null, sides);
+   
+ });
+  return (largestNumber) ;
 }
 
 module.exports = {
