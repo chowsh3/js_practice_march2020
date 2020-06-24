@@ -128,15 +128,23 @@ function getCities(users) {
 
 function getSquareRoots(nums) {
   if (!nums) throw new Error("nums is required");
-  let squareRootArray = [];
+  // let squareRootArray = [];
   // for (let i = 0; i < nums.length; i++) {
   //   squareRootArray.push(Math.round(Math.sqrt(nums[i]) * 100) / 100);
   // }
   // return (squareRootArray)
-  nums.forEach(num=>{
-    squareRootArray.push(Math.round(Math.sqrt(num) * 100) / 100);
-  })
-  return squareRootArray;
+
+  // let squareRootArray = [];
+  // nums.forEach(num=>{
+  //   squareRootArray.push(Math.round(Math.sqrt(num) * 100) / 100);
+  // });
+  // return squareRootArray;
+
+  const squareNums = nums.map ( num => {
+    return (Math.round(Math.sqrt(num)*100)/100);
+  });
+  return squareNums;
+
 }
 
 function findSentencesContaining(sentences, str) {
