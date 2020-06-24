@@ -150,19 +150,29 @@ function getSquareRoots(nums) {
 function findSentencesContaining(sentences, str) {
   if (!sentences) throw new Error("sentences is required");
   if (!str) throw new Error("str is required");
-  let newArray = [];
+  // let newArray = [];
   // for (let i = 0; i < sentences.length; i++) {
   //   if (sentences[i].toLowerCase().includes(str)) {
   //     newArray.push(sentences[i])
   //   }
   // }
   // return newArray
-  sentences.forEach(sentence => {
+
+  // sentences.forEach(sentence => {
+  //   if(sentence.toLowerCase().includes(str)){
+  //     newArray.push(sentence)
+  //   }
+  // })
+  // return newArray;
+
+  const strSentences = sentences.filter ( sentence => {
     if(sentence.toLowerCase().includes(str)){
-      newArray.push(sentence)
+      return true;
+    } else {
+      return false;
     }
-  })
-  return newArray;
+  });
+  return strSentences;
 }
 
 function getLongestSides(triangles) {
@@ -177,9 +187,6 @@ function getLongestSides(triangles) {
     }
   }
   return largestNumber;
-
-
-
 }
 
 module.exports = {
