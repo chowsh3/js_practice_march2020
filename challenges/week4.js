@@ -90,12 +90,20 @@ function getIntegers(nums) {
   // }
   // return arrayIntegers;
 
-  let arrayIntegers = [];
-  nums.forEach(num => {
-    if(Number.isInteger(num)){
-      arrayIntegers.push(num);
+  // let arrayIntegers = [];
+  // nums.forEach(num => {
+  //   if(Number.isInteger(num)){
+  //     arrayIntegers.push(num);
+  //   }
+  // })
+  // return arrayIntegers;
+
+  const arrayIntegers = nums.filter(num => {
+    if(num %1 ===0) {
+      return num;
     }
-  })
+
+  });
   return arrayIntegers;
 }
 
@@ -106,10 +114,15 @@ function getCities(users) {
   //   (cityNames.push(users[i].data.city.displayName))
   // }
   // return cityNames;
-  let cityNames=[];
-  users.forEach(user => {
-    cityNames.push(user.data.city.displayName)
-  })
+
+  // let cityNames=[];
+  // users.forEach(user => {
+  //   cityNames.push(user.data.city.displayName)
+  // })
+  // return cityNames;
+  const cityNames = users.map (user => {
+     return user.data.city.displayName;
+  });
   return cityNames;
 }
 

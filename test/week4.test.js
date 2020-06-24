@@ -31,7 +31,7 @@ describe("findNamesBeginningWith", () => {
   });
 });
 
-describe.only("findVerbs", () => {
+describe("findVerbs", () => {
   test("returns an array of words that are considered verbs (because they begin with 'to ')", () => {
     const words = [
       "to eat",
@@ -67,7 +67,7 @@ describe("getIntegers", () => {
   });
 });
 
-describe("getCities", () => {
+describe.only("getCities", () => {
   test("returns an array of the cities of each user", () => {
     const users = [
       {
