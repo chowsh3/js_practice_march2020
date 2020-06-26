@@ -45,7 +45,19 @@ const sumArrays = arrs => {
 
 const arrShift = arr => {
   if (arr === undefined) throw new Error("arr is required");
-  // Your code here!
+  const firstIndex = arr[0];
+  const lastindexElement = arr[arr.length-1];
+  const arrLength = arr.length;
+  let newArr = arr.slice(1,arrLength-1);
+  newArr.splice(0,0, lastindexElement);
+  newArr.splice(arrLength,0, firstIndex);
+  // if(arrLength<=2){
+  //   return arr.reverse();
+  // } else {
+  //   return newArr;
+  // }
+  return (arrLength<=2) ? arr.reverse() : newArr;
+
 };
 
 const findNeedle = (haystack, searchTerm) => {
