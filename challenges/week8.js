@@ -4,23 +4,33 @@ const findNextNumber = (nums, n) => {
   const newArr = nums.indexOf(n);
   let newOne = nums[newArr+1];
   let lengthIndex = nums[nums.length-1]
-  if (n === lengthIndex || !nums.includes(n)){
-    return null;
-    } else{
-      return newOne;
-  }
-
-
+  // if (n === lengthIndex || !nums.includes(n)){
+  //   return null;
+  //   } else{
+  //     return newOne;
+  // }
+  return (n === lengthIndex || !nums.includes(n)) ? null : newOne;
 };
 
 const count1sand0s = str => {
   if (str === undefined) throw new Error("str is required");
-  // Your code here!
-};
+ 
+  let result = {0:0};
+  for(let i = 0; i < str.length; i++) {
+    const char = str[i];
+    if(result[char]===undefined){result[char] = 1;
+    } else {
+    result[char]+=1;
+    }
+  }
+  return (result)
+}
 
 const reverseNumber = n => {
   if (n === undefined) throw new Error("n is required");
-  // Your code here!
+  const toString = n.toString();
+  const strNum = Object.values(toString).reverse().join("");
+  return parseFloat(strNum);
 };
 
 const sumArrays = arrs => {
