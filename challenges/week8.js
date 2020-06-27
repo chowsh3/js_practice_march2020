@@ -2,8 +2,8 @@ const findNextNumber = (nums, n) => {
   if (nums === undefined) throw new Error("nums is required");
   if (n === undefined) throw new Error("n is required");
   const newArr = nums.indexOf(n);
-  let newOne = nums[newArr+1];
-  let lengthIndex = nums[nums.length-1]
+  let newOne = nums[newArr + 1];
+  let lengthIndex = nums[nums.length - 1]
   // if (n === lengthIndex || !nums.includes(n)){
   //   return null;
   //   } else{
@@ -14,13 +14,14 @@ const findNextNumber = (nums, n) => {
 
 const count1sand0s = str => {
   if (str === undefined) throw new Error("str is required");
- 
-  let result = {0:0};
-  for(let i = 0; i < str.length; i++) {
+
+  let result = { 0: 0 };
+  for (let i = 0; i < str.length; i++) {
     const char = str[i];
-    if(result[char]===undefined){result[char] = 1;
+    if (result[char] === undefined) {
+      result[char] = 1;
     } else {
-    result[char]+=1;
+      result[char] += 1;
     }
   }
   return (result)
@@ -36,27 +37,27 @@ const reverseNumber = n => {
 const sumArrays = arrs => {
   if (arrs === undefined) throw new Error("arrs is required");
   const combineArrays = arrs.map(test => {
-     return test.reduce((accumulator, currentValue)=> accumulator+ currentValue);
+    return test.reduce((accumulator, currentValue) => accumulator + currentValue);
   })
-  const reducer = (accumulator, currentValue) =>  accumulator + currentValue;
+  const reducer = (accumulator, currentValue) => accumulator + currentValue;
   return combineArrays.reduce(reducer);
-  
+
 };
 
 const arrShift = arr => {
   if (arr === undefined) throw new Error("arr is required");
   const firstIndex = arr[0];
-  const lastindexElement = arr[arr.length-1];
+  const lastindexElement = arr[arr.length - 1];
   const arrLength = arr.length;
-  let newArr = arr.slice(1,arrLength-1);
-  newArr.splice(0,0, lastindexElement);
-  newArr.splice(arrLength,0, firstIndex);
+  let newArr = arr.slice(1, arrLength - 1);
+  newArr.splice(0, 0, lastindexElement);
+  newArr.splice(arrLength, 0, firstIndex);
   // if(arrLength<=2){
   //   return arr.reverse();
   // } else {
   //   return newArr;
   // }
-  return (arrLength<=2) ? arr.reverse() : newArr;
+  return (arrLength <= 2) ? arr.reverse() : newArr;
 
 };
 
@@ -64,19 +65,34 @@ const findNeedle = (haystack, searchTerm) => {
   if (haystack === undefined) throw new Error("haystack is required");
   if (searchTerm === undefined) throw new Error("searchTerm is required");
   let hayStackValues = Object.values(haystack);
-  let findWord = hayStackValues.find(word => word.includes(searchTerm));
-  if(findWord.includes(searchTerm)){
-    return true;
-  } else {
-    return false
+  let word = searchTerm;
+  let newWord = word.toLowerCase();
+  let toString = hayStackValues.map(n => n.toString().toLowerCase())
+  for (let i = 0; i < toString.length; i++) {
+    return (toString[i].includes(newWord)) ? true : false;
   }
+  //   if(toString[i].includes(newWord)){
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
 
-  
+
 };
 
 const getWordFrequencies = str => {
   if (str === undefined) throw new Error("str is required");
-  // Your code here!
+  let newWords = str.toLowerCase().replace(/[^a-zA-Z ]/g, "").split(" ");
+  let result = {};
+  for (let i = 0; i < newWords.length; i++) {
+    const char = newWords[i];
+    if (result[char] === undefined) {
+      result[char] = 1;
+    } else {
+      result[char] += 1;
+    }
+  }
+  return result;
 };
 
 module.exports = {
